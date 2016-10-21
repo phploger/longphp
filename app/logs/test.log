@@ -1,0 +1,4 @@
+[2016-10-21 10:54:17] IndexController.WARNING: Foo [] []
+[2016-10-21 10:54:17] IndexController.ERROR: Bar [] []
+[2016-10-21 10:54:22] IndexController.WARNING: Foo [] []
+[2016-10-21 10:54:22] IndexController.ERROR: Bar [] []
