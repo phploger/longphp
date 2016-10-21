@@ -1,0 +1,20 @@
+{
+	"name":"long php",
+	"description":"PHP framework",
+	"type":"framework",
+	"keywords":[
+		"php","framework","long"
+	],
+	"require":{
+		"php":">=5.3.0",
+		"catfan/medoo":"*",
+		"filp/whoops":"*"
+	},
+	"repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+
+}
