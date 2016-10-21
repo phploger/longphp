@@ -13,6 +13,15 @@ class IndexController extends Controller{
 	
 	public function actionIndex(){
 		
+		$mobile = "17092058094";
+		
+		if(is_valid_mobile($mobile)){
+			echo "valid";
+		}else{
+			echo "unvalid";
+		}
+		exit;
+		
 		$user = new User();
 		$userList = $user->getUserList();
 		$this->assign('userList', $userList);

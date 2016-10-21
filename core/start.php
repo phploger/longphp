@@ -1,17 +1,27 @@
 <?php
+/**
+ * 框架启动类
+ *
+ */
 
 namespace core;
 
 class start{
 	
 	public static $classMap;
-	
+
+    /**
+     * 启动框架
+     * @throws \Exception
+     */
 	public static function run(){
-		
+        //从url中解析出控制器和操作
 		$route = new \core\libs\Route();
+        //controller转换，如:user-center转换成UserCenterController
 		$controller = self::_ucwords($route->controller)."Controller";
+        //action转换，如：send-email转换成actionSendEmail
 		$action  = "action".self::_ucwords($route->action);
-		
+		//控制器类的文件名格式为IndexController.php
 		$controllerFile = APP."/controllers/".$controller.".php";
 		
 		if(is_file($controllerFile)){
@@ -36,8 +46,14 @@ class start{
 		
 		
 	}
-	
-	public static function load($className){
+
+    /**
+     * 自动加载类
+     * @param $className
+     * @return bool
+     *
+     */
+    public static function load($className){
 		
 		if(isset(self::$classMap[$className]))
 		{
@@ -59,7 +75,12 @@ class start{
 		}
 		
 	}
-	
+
+    /**
+     * 转换控制器和操作
+     * @param $var
+     * @return mixed
+     */
 	public static function _ucwords($var){
 		$var = str_replace("-"," ",$var);
 		$var = ucwords($var);

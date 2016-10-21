@@ -1,10 +1,20 @@
 <?php
-
+/*************************
+ * 从配置文件读取配置类
+ ************************/
 namespace core\libs;
 
 class Config{
 	
 	public static $conf;
+
+    /**
+     * 从配置文件中读取一条配置信息
+     * @param $name
+     * @param $file
+     * @return string
+     * @throws \Exception
+     */
 	public static function getOne($name,$file){
 		
 		if(isset(self::$conf[$file][$name])){
@@ -25,7 +35,13 @@ class Config{
 			}
 		}
 	}
-	
+
+    /**
+     * 从配置文件中读取全部配置项
+     * @param $file
+     * @return array
+     * @throws \Exception
+     */
 	public static function getAll($file){
 		if(isset(self::$conf[$file])){
 			return self::$conf[$file];
